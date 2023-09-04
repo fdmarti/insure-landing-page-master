@@ -1,0 +1,53 @@
+---
+const { text = 'Default', classColor = 'veryLightGray' } = Astro.props;
+---
+
+<button class={classColor}>
+	{text}
+</button>
+<style>
+	button {
+		text-transform: uppercase;
+		padding: 8px 35px;
+		font-weight: 700;
+	}
+
+	button:hover {
+		cursor: pointer;
+	}
+
+	.veryLightGray {
+		background-color: var(--veryLightGray);
+		border: 2px solid var(--veryDarkViolet);
+	}
+
+	.veryLightGray:hover {
+		color: var(--veryLightGray);
+		background-color: var(--veryDarkViolet);
+	}
+
+	.darkVioleta {
+		background-color: var(--darkVioleta);
+		color: var(--veryLightGray);
+		border: 2px solid var(--veryLightGray);
+	}
+
+	.transparent:hover,
+	.darkVioleta:hover {
+		color: var(--darkVioleta);
+		background-color: var(--veryLightGray);
+	}
+
+	.transparent {
+		background-color: transparent;
+		color: var(--veryLightGray);
+		border: 2px solid var(--veryLightGray);
+	}
+
+	@media (max-width: 768px) {
+		button {
+			width: 100%;
+			padding: 20px 75px;
+		}
+	}
+</style>

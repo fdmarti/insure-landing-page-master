@@ -1,0 +1,44 @@
+---
+import Button from '../Button.astro';
+---
+
+<section class='first-column'>
+	<h1>Humanizing<br />your insurance.</h1>
+	<p>
+		Get your life insurance coverage easier and faster. We blend our expertise
+		and technology to help you find the plan that’s right for you. Ensure you
+		and your loved ones are protected.
+	</p>
+	<Button classColor='darkVioleta' text='View plans' />
+</section>
+<style>
+	.first-column {
+		flex: 0 1 50%;
+	}
+
+	h1 {
+		color: var(--veryLightGray);
+	}
+
+	h1::before {
+		background-color: var(--veryLightGray);
+	}
+
+	.first-column p {
+		padding: 50px 0;
+		color: var(--veryLightGray);
+		max-width: 600px;
+		line-height: 30px;
+	}
+
+	@media (max-width: 1200px) {
+		.first-column {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+		.first-column p {
+			text-align: center;
+		}
+	}
+</style>

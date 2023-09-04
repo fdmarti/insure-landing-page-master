@@ -1,0 +1,95 @@
+---
+import Button from './Button.astro';
+---
+
+<script>
+	const btnToggleMenu = document.querySelector('.burger');
+	const menu = document.querySelector('.menu');
+	const imageMenu = document.querySelector('.burger');
+
+	btnToggleMenu.addEventListener('click', () => {
+		menu.classList.toggle('show');
+
+		if (menu.classList.contains('show')) {
+			imageMenu.src = '/images/icon-close.svg';
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+			imageMenu.src = '/images/icon-hamburger.svg';
+		}
+	});
+</script>
+
+<nav class='max-w'>
+	<div class='logo-block'>
+		<img class='logo' src='/images/logo.svg' alt='insure image' />
+	</div>
+	<ul class='menu'>
+		<li>How we work</li>
+		<li>Blog</li>
+		<li>Account</li>
+		<li>
+			<Button text='View plans' />
+		</li>
+	</ul>
+	<div class='burger-menu'>
+		<img class='burger' src='/images/icon-hamburger.svg' alt='icon hamburger' />
+	</div>
+</nav>
+<style>
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 25px;
+	}
+
+	.burger-menu {
+		display: none;
+	}
+
+	.menu {
+		display: flex;
+		gap: 2.5rem;
+		align-items: center;
+	}
+
+	.menu li {
+		color: var(--darGreyisViolet);
+	}
+
+	.menu li:hover {
+		cursor: pointer;
+		color: var(--veryDarkViolet);
+	}
+
+	@media (max-width: 768px) {
+		.menu {
+			display: none;
+			position: absolute;
+			background-color: var(--veryDarkViolet);
+			height: 100vh;
+			width: 100%;
+			left: 0;
+			top: 85px;
+			z-index: 5;
+			padding-top: 60px;
+			flex-direction: column;
+		}
+
+		.menu li {
+			text-align: center;
+			color: var(--veryLightGray);
+			font-size: 22px;
+			font-weight: 400;
+		}
+
+		.burger-menu {
+			display: block;
+		}
+
+		.show {
+			display: flex;
+		}
+	}
+</style>

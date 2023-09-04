@@ -1,0 +1,39 @@
+---
+const {
+	urlImage = 'icon-affordable-prices.svg',
+	title = 'Default title',
+	text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+} = Astro.props;
+---
+
+<div class='block'>
+	<img src=`/images/${urlImage}` alt=`icon ${title}` />
+	<h4>{title}</h4>
+	<p>{text}</p>
+</div>
+<style>
+	.block {
+		max-width: 400px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.5rem;
+	}
+
+	.block h4 {
+		font-size: 27px;
+	}
+
+	.block p {
+		color: var(--darGreyisViolet);
+		font-size: 18px;
+		line-height: 25px;
+	}
+
+	@media (max-width: 1200px) {
+		.block {
+			align-items: center;
+			text-align: center;
+		}
+	}
+</style>

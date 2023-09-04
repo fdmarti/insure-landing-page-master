@@ -1,0 +1,59 @@
+---
+import BlockComponent from './WeAreDifferent/BlockComponent.astro';
+---
+
+<div class='different max-w'>
+	<h2>We're different</h2>
+	<section class='differences'>
+		<BlockComponent
+			urlImage='icon-snappy-process.svg'
+			title='Snappy Process'
+			text='Our application process can be completed in minutes, not hours. Don’t get stuck filling in tedious forms.'
+		/>
+		<BlockComponent
+			urlImage='icon-affordable-prices.svg'
+			title='Affordable Prices'
+			text='We don’t want you worrying about high monthly costs. Our prices may be low, but we still offer the best coverage possible.'
+		/>
+		<BlockComponent
+			urlImage='icon-people-first.svg'
+			title='People First'
+			text='Our plans aren’t full of conditions and clauses to prevent payouts. We make sure you’re covered when you need it.'
+		/>
+	</section>
+</div>
+<style>
+	.different {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 800px;
+		gap: 5rem;
+	}
+
+	.different h2 {
+		color: var(--darkVioleta);
+	}
+
+	.different h2::before {
+		background-color: var(--darkVioleta);
+	}
+
+	.differences {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	@media (max-width: 1200px) {
+		.different {
+			height: auto;
+			padding: 100px 20px;
+		}
+
+		.differences {
+			flex-direction: column;
+			gap: 2rem;
+		}
+	}
+</style>

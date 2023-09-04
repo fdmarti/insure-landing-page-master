@@ -1,0 +1,90 @@
+---
+import SocialMediaComponent from './Footer/SocialMediaComponent.astro';
+import ExternalLinksComponent from './Footer/ExternalLinksComponent.astro';
+
+import {
+	FirstLinks,
+	SecondLinks,
+	ThirdLinks,
+	FourthLinks,
+} from '../helpers/externalLinks';
+---
+
+<footer>
+	<img
+		class='bg-patter-footer'
+		src='/images/bg-pattern-footer-desktop.svg'
+		alt='image patter footer'
+	/>
+	<section class='footer-row max-w'>
+		<div class='logo-block'>
+			<img class='logo' src='/images/logo.svg' alt='insure image' />
+		</div>
+		<SocialMediaComponent />
+	</section>
+	<section class='external-links max-w'>
+		<ExternalLinksComponent title='Our company' links={FirstLinks} />
+		<ExternalLinksComponent title='Help me' links={SecondLinks} />
+		<ExternalLinksComponent title='Contact' links={ThirdLinks} />
+		<ExternalLinksComponent title='Others' links={FourthLinks} />
+	</section>
+</footer>
+<style>
+	footer {
+		background-color: var(--veryLightGray);
+		padding: 50px 20px;
+		position: relative;
+		flex-direction: column;
+	}
+
+	.bg-patter-footer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+
+	.footer-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		border-bottom: 1px solid var(--grayishViole);
+		padding-bottom: 30px;
+	}
+
+	.external-links {
+		display: flex;
+		justify-content: space-between;
+		padding: 30px 0;
+		max-width: 900px;
+		margin: 0 200px;
+		position: relative;
+		z-index: 1;
+	}
+
+	@media (max-width: 1200px) {
+		.bg-patter-footer {
+			content: url('/images/bg-pattern-footer-mobile.svg');
+			width: auto;
+		}
+
+		.footer-row {
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+
+		.external-links {
+			flex-direction: column;
+			align-items: center;
+			gap: 2rem;
+			margin: 0 auto;
+		}
+	}
+
+	@media (max-width: 400px) {
+		.bg-patter-footer {
+			display: none;
+		}
+	}
+</style>

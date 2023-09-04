@@ -1,0 +1,65 @@
+---
+import Button from './Button.astro';
+---
+
+<div class='find-out max-w'>
+	<h3>Find out more<br />about how we work</h3>
+	<Button text='How we work' classColor='transparent' />
+	<img
+		src='/images/bg-pattern-how-we-work-desktop.svg'
+		alt='background pattern how we work'
+	/>
+</div>
+<style>
+	.find-out {
+		background-color: var(--darkVioleta);
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		gap: 5rem;
+		padding: 0 20px;
+		height: 200px;
+		margin: 0 auto 150px;
+		position: relative;
+		z-index: 999;
+	}
+
+	.find-out h3 {
+		color: var(--veryLightGray);
+		font-size: 60px;
+		line-height: 60px;
+	}
+
+	.find-out img {
+		position: absolute;
+		right: 0;
+		width: 340px;
+		z-index: -1;
+	}
+
+	@media (max-width: 1200px) {
+		.find-out {
+			flex-direction: column;
+			height: auto;
+			padding: 60px;
+			text-align: center;
+			gap: 3rem;
+		}
+
+		.find-out h3 {
+			font-size: 48px;
+		}
+
+		.find-out img {
+			top: 0;
+			content: url('/images/bg-pattern-how-we-work-mobile.svg');
+			width: auto;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.find-out h3 {
+			font-size: 40px;
+		}
+	}
+</style>

@@ -1,0 +1,33 @@
+<section class='second-column'>
+	<img
+		class='hero-img'
+		src='/images/image-intro-desktop.jpg'
+		alt='image desktop'
+	/>
+</section>
+<style>
+	.second-column {
+		position: relative;
+		flex: 0 1 50%;
+	}
+
+	.hero-img {
+		position: relative;
+		top: 100px;
+		left: 60px;
+	}
+
+	@media (max-width: 1200px) {
+		.hero-img {
+			top: 0;
+			left: 0;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.hero-img {
+			content: url('/images/image-intro-mobile.jpg');
+			width: 100%;
+		}
+	}
+</style>

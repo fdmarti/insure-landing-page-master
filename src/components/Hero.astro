@@ -1,0 +1,65 @@
+---
+import TitleComponent from './Hero/TitleComponent.astro';
+import ImageHeroComponent from './Hero/ImageHeroComponent.astro';
+---
+
+<div class='hero'>
+	<div class='hero-content max-w'>
+		<TitleComponent />
+		<ImageHeroComponent />
+	</div>
+	<img
+		class='patter-top'
+		src='/images/bg-pattern-intro-right-desktop.svg'
+		alt='pattern intro right'
+	/>
+	<img
+		class='patter-bottom'
+		src='/images/bg-pattern-intro-left-desktop.svg'
+		alt='pattern intro left bottom'
+	/>
+</div>
+<style>
+	.hero {
+		background-color: var(--darkVioleta);
+		height: 600px;
+		position: relative;
+		margin-bottom: 150px;
+	}
+
+	.hero-content {
+		position: relative;
+		align-items: center;
+		display: flex;
+	}
+
+	.patter-top {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 390px;
+	}
+
+	.patter-bottom {
+		bottom: -300px;
+		position: absolute;
+		width: 200px;
+	}
+
+	@media (max-width: 1200px) {
+		.hero {
+			height: auto;
+			padding-bottom: 60px;
+			margin-bottom: 0;
+		}
+		.hero-content {
+			flex-direction: column-reverse;
+			gap: 4rem;
+		}
+
+		.patter-top,
+		.patter-bottom {
+			display: none;
+		}
+	}
+</style>
